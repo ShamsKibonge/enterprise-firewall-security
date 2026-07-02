@@ -1,74 +1,45 @@
 # Implementation Summary
 
-## Configuration Management
+This summary is organized around phases of an enterprise firewall deployment instead of the original lab sequence.
 
-The implementation includes baseline loading, named configuration snapshots, exported configuration snapshots, reverting uncommitted changes, previewing configuration changes, and reviewing System and Configuration logs.
+## Phase 1: Baseline and Administrative Control
 
-Evidence source: Lab 02 objectives.
+The implementation begins with governed firewall administration. The objective-backed scope includes baseline loading, named configuration snapshots, exported snapshots, revert and preview workflows, System and Configuration log review, local administrator accounts, LDAP, RADIUS, authentication profiles, and authentication sequencing.
 
-## Administrator Authentication
+Evidence boundary: Supported by Lab 02 and Lab 03 objectives, plus available authentication evidence.
 
-The authentication design includes local administrator accounts, LDAP server profiles, RADIUS server profiles, authentication profiles, an authentication sequence, and non-local administrator accounts.
+## Phase 2: Network Segmentation Foundation
 
-Evidence source: Lab 03 objectives and available authentication evidence.
+The network foundation uses Layer 3 firewall interfaces, security zones, a virtual router, and interface management profiles. This creates separate trust boundaries for users, acquisition users, internal services, extranet resources, management access, and internet-bound traffic.
 
-## Network Segmentation and Security Zones
+Evidence boundary: Supported by Lab 04 objectives and available segmentation evidence.
 
-The deployment uses Layer 3 firewall interfaces, a virtual router, security zones, connectivity tests, and interface management profiles. This supports zone-based enforcement and restricted management access.
+## Phase 3: Policy and NAT Enforcement
 
-Evidence source: Lab 04 objectives and available segmentation evidence.
+The traffic-control phase focuses on least privilege Security Policy and NAT. The objective-backed scope includes user-to-extranet access, internet-bound security rules, Traffic log validation, policy hit-count review, interzone/intrazone logging, source NAT, and destination NAT.
 
-## Security Policies
+Evidence boundary: Supported by Lab 05 and Lab 06 objectives, plus available security policy and NAT validation screenshots.
 
-The security policy design allows required user-to-extranet and internet-bound access, validates traffic through logs, reviews policy hit counts, and enables logging for interzone and intrazone visibility.
+## Phase 4: Application and Threat Inspection
 
-Evidence source: Lab 05 objectives and available traffic validation evidence.
+The inspection phase adds App-ID, Security Profiles, URL Filtering, and WildFire. These controls move the firewall from network-layer enforcement toward application-aware and content-aware security.
 
-## NAT
+Objective-backed scope includes:
 
-The NAT design includes source NAT for outbound access and destination NAT for published services. NAT validation should be reviewed alongside Traffic logs to confirm translation behavior.
+- Application groups and App-ID based policy.
+- Shadowed-rule review and policy correction.
+- Security Profiles and Security Profile Groups.
+- URL category enforcement and malicious URL blocking.
+- WildFire Analysis Profile and analysis review.
 
-Evidence source: Lab 06 objectives and available NAT evidence.
+Evidence boundary: Supported by Lab 07 through Lab 10 objectives, plus available threat-prevention, URL filtering, and WildFire screenshots.
 
-## App-ID
+## Phase 5: Identity, Encryption, and Operations
 
-The App-ID design uses application groups and application-based policy to control approved Palo Alto update traffic and business application usage. The lab objectives also include identifying shadowed rules and correcting policy behavior.
+The operational phase adds User-ID, SSL decryption objectives, and reporting. User-ID supports group-aware policy for acquisition and marketing access requirements. SSL decryption objectives include trusted/untrusted certificates, outbound decryption policy, browser certificate import, log review, and no-decrypt rules for sensitive categories. Reporting objectives include Dashboard, ACC, Traffic logs, Threat logs, App Scope, predefined reports, and custom reports.
 
-Evidence source: Lab 07 objectives.
+Evidence boundary: Supported by Lab 11 through Lab 13 objectives, plus available group and reporting screenshots. Direct SSL decryption configuration screenshots are not present, so that area is documented as objective-supported.
 
-## Security Profiles and Threat Prevention
+## Outcome
 
-The threat-prevention design includes Security Profiles, a Security Profile Group, and applying that group to existing Security Policy rules. The implementation compares traffic before and after profiles are applied.
-
-Evidence source: Lab 08 objectives and available threat-prevention evidence.
-
-## URL Filtering
-
-The URL filtering design blocks inappropriate web content and malicious URLs using URL categories and URL Filtering Profiles. Validation includes testing access before and after enforcement and reviewing results.
-
-Evidence source: Lab 09 objectives and available URL filtering evidence.
-
-## WildFire Analysis
-
-WildFire is used to analyze unknown threats. The implementation includes a WildFire Analysis Profile, applying it to security rules, testing the profile, and reviewing analysis details.
-
-Evidence source: Lab 10 objectives and available WildFire evidence.
-
-## User-ID
-
-The User-ID design enables identity-aware policy in the Acquisition zone. It restricts users to approved corporate applications and supports group-based access for marketing users.
-
-Evidence source: Lab 11 objectives and available group evidence.
-
-## SSL Decryption
-
-The SSL decryption design includes testing firewall behavior without decryption, creating trusted and untrusted certificates, creating outbound decryption policy, importing a trusted certificate into Firefox, reviewing logs, and creating no-decrypt exceptions for sensitive URL categories.
-
-Evidence source: Lab 12 objectives.
-
-## Logs and Reports
-
-The monitoring design includes Dashboard widgets, ACC, Threat logs, Traffic logs, App Scope reports, predefined reports, and custom reports for application and threat visibility.
-
-Evidence source: Lab 13 objectives and available reporting evidence.
-
+The final portfolio presents a cohesive enterprise firewall case study with sanitized evidence, architecture diagrams, business context, deployment phases, and clear evidence boundaries.
