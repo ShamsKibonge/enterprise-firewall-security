@@ -8,6 +8,8 @@
 ![SSL Decryption](https://img.shields.io/badge/SSL%20Decryption-Inspection-lightgrey)
 ![Portfolio](https://img.shields.io/badge/Portfolio-Case%20Study-black)
 
+![Enterprise Firewall Security LinkedIn Featured Thumbnail](assets/linkedin-featured-thumbnail.png)
+
 ## Enterprise Firewall Security Engineering Portfolio Case Study
 
 This repository presents a controlled-lab enterprise firewall implementation using Palo Alto Networks NGFW capabilities. It demonstrates how segmentation, least-privilege policy, NAT, App-ID, URL Filtering, WildFire, User-ID, SSL decryption objectives, and operational reporting work together in a modern firewall security program.
@@ -36,41 +38,24 @@ The environment modeled internal users, an acquisition network, internal service
 
 ## Key Security Capabilities
 
-| Capability | Capability | Capability |
+| Network Controls | Inspection Controls | Operational Controls |
 |---|---|---|
-| ✔ Security Zones | ✔ Layer 3 Interfaces | ✔ Virtual Router |
-| ✔ Security Policy | ✔ Source NAT | ✔ Destination NAT |
-| ✔ App-ID | ✔ Threat Prevention | ✔ URL Filtering |
-| ✔ WildFire | ✔ User-ID | ✔ SSL Decryption Objectives |
-| ✔ Traffic Logging | ✔ ACC Reporting | ✔ Dashboard Analytics |
+| Security Zones | App-ID | Traffic Logging |
+| Layer 3 Interfaces | Threat Prevention | ACC Reporting |
+| Virtual Router | URL Filtering | Dashboard Analytics |
+| Security Policy | WildFire | User-ID Evidence |
+| Source NAT | SSL Decryption Objectives | Reporting Evidence |
+| Destination NAT | Security Profiles | Evidence Mapping |
 
 ---
-
 ## Deployment Timeline
 
 ```mermaid
-timeline
-    title Enterprise NGFW Deployment Case Study
-    Phase 1 : Governed baseline
-            : Configuration snapshots
-            : Administrator authentication
-    Phase 2 : Network security foundation
-            : Layer 3 interfaces
-            : Security zones
-            : Management boundaries
-    Phase 3 : Traffic enforcement
-            : Security Policy
-            : Source NAT
-            : Destination NAT
-    Phase 4 : Layered inspection
-            : App-ID
-            : Threat Prevention
-            : URL Filtering
-            : WildFire
-    Phase 5 : Operations and visibility
-            : User-ID
-            : SSL decryption objectives
-            : Logs, ACC, dashboards, reports
+flowchart LR
+    P1["Phase 1<br/>Governed Baseline<br/>Snapshots + Admin Auth"] --> P2["Phase 2<br/>Network Foundation<br/>Zones + L3 Interfaces"]
+    P2 --> P3["Phase 3<br/>Traffic Enforcement<br/>Security Policy + NAT"]
+    P3 --> P4["Phase 4<br/>Layered Inspection<br/>App-ID + Threat Prevention + URL Filtering + WildFire"]
+    P4 --> P5["Phase 5<br/>Operations and Visibility<br/>User-ID + SSL Decryption Objectives + Reports"]
 ```
 
 ## Target Architecture
