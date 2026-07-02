@@ -1,0 +1,22 @@
+# OS/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Do not publish raw firewall exports, secrets, or certificate material.
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.csr
+*.xml
+*.conf
+*.cfg
+*.backup
+
+# Do not publish copyrighted lab PDFs in this portfolio repo.
+*.pdf
+
