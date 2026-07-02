@@ -1,16 +1,23 @@
 # Enterprise Firewall Security Implementation with Palo Alto NGFW
 
-![Platform](https://img.shields.io/badge/Platform-Palo%20Alto%20Networks-red)
-![Focus](https://img.shields.io/badge/Focus-NGFW%20Security%20Engineering-blue)
-![Environment](https://img.shields.io/badge/Environment-Controlled%20Lab-lightgrey)
-![Evidence](https://img.shields.io/badge/Evidence-Sanitized%20Screenshots-green)
-![Status](https://img.shields.io/badge/Status-Portfolio%20Case%20Study-brightgreen)
+![Palo Alto Networks](https://img.shields.io/badge/Palo%20Alto%20Networks-NGFW-red)
+![PAN-OS](https://img.shields.io/badge/PAN--OS-Firewall%20Security-blue)
+![App-ID](https://img.shields.io/badge/App--ID-Application%20Control-purple)
+![WildFire](https://img.shields.io/badge/WildFire-Threat%20Analysis-orange)
+![User-ID](https://img.shields.io/badge/User--ID-Identity%20Policy-green)
+![SSL Decryption](https://img.shields.io/badge/SSL%20Decryption-Inspection-lightgrey)
+![Portfolio](https://img.shields.io/badge/Portfolio-Case%20Study-black)
+
+## Enterprise Firewall Security Engineering Portfolio Case Study
+
+This repository presents a controlled-lab enterprise firewall implementation using Palo Alto Networks NGFW capabilities. It demonstrates how segmentation, least-privilege policy, NAT, App-ID, URL Filtering, WildFire, User-ID, SSL decryption objectives, and operational reporting work together in a modern firewall security program.
+
+> [!NOTE]
+> This is a portfolio case study built from sanitized lab evidence, screenshots, and documented PAN-OS objectives. It does not claim production access or a live customer deployment.
+
+---
 
 ## Case Study Snapshot
-
-This project presents a controlled enterprise firewall implementation using Palo Alto Networks NGFW capabilities. The scenario models a security team preparing a firewall for production use: segmenting networks, controlling application access, validating NAT, adding threat prevention, enforcing URL controls, enabling identity-aware policy, planning SSL decryption, and building operational visibility through logs and reports.
-
-The repository is intentionally written as a portfolio case study. It uses the evidence available in this folder and avoids claiming production access or configuration screenshots that are not present.
 
 | Portfolio Metric | Evidence-Grounded Value |
 |---|---:|
@@ -18,50 +25,52 @@ The repository is intentionally written as a portfolio case study. It uses the e
 | Palo Alto evidence screenshots included | 10 |
 | Main technical evidence screenshots | 9 |
 | Completion-only screenshots separated | 1 |
-| Deployment phases documented | 5 |
-| Lab guide PDFs republished | 0 |
+| Enterprise deployment phases documented | 5 |
+| Copyrighted lab PDFs republished | 0 |
 
 ## Business Scenario
 
-A growing organization is preparing to harden its perimeter and internal access controls with a Palo Alto Networks NGFW. The environment includes internal users, an acquisition network, internal services, extranet resources, administrative access, and internet-bound traffic.
+A growing enterprise required a modern next-generation firewall implementation capable of enforcing least-privilege access, application-aware inspection, identity-based policy, advanced threat prevention, and operational visibility across multiple security zones.
 
-The security team needs the firewall to support:
+The environment modeled internal users, an acquisition network, internal services, extranet resources, administrator access, and internet-bound traffic. The firewall needed to demonstrate controlled access between trust boundaries while producing enough log and report evidence for security validation.
 
-- Segmented access between trust zones.
-- Controlled outbound access through NAT and security policy.
-- Application-aware enforcement using App-ID.
-- Web access control using URL categories.
-- Threat inspection for allowed traffic.
-- Unknown-file analysis through WildFire.
-- User and group-aware access decisions.
-- SSL decryption planning with privacy exceptions.
-- Reporting and log review for validation.
+## Key Security Capabilities
+
+| Capability | Capability | Capability |
+|---|---|---|
+| ✔ Security Zones | ✔ Layer 3 Interfaces | ✔ Virtual Router |
+| ✔ Security Policy | ✔ Source NAT | ✔ Destination NAT |
+| ✔ App-ID | ✔ Threat Prevention | ✔ URL Filtering |
+| ✔ WildFire | ✔ User-ID | ✔ SSL Decryption Objectives |
+| ✔ Traffic Logging | ✔ ACC Reporting | ✔ Dashboard Analytics |
+
+---
 
 ## Deployment Timeline
 
 ```mermaid
 timeline
-    title Enterprise NGFW Deployment Phases
-    Phase 1 : Baseline and administrative access
-            : Configuration management
-            : Administrator authentication design
-    Phase 2 : Network foundation
+    title Enterprise NGFW Deployment Case Study
+    Phase 1 : Governed baseline
+            : Configuration snapshots
+            : Administrator authentication
+    Phase 2 : Network security foundation
+            : Layer 3 interfaces
             : Security zones
-            : Routed interfaces
-            : Management access boundaries
-    Phase 3 : Traffic control
-            : Security policy
+            : Management boundaries
+    Phase 3 : Traffic enforcement
+            : Security Policy
             : Source NAT
             : Destination NAT
     Phase 4 : Layered inspection
             : App-ID
-            : Threat prevention
-            : URL filtering
+            : Threat Prevention
+            : URL Filtering
             : WildFire
-    Phase 5 : Identity, encryption, and operations
+    Phase 5 : Operations and visibility
             : User-ID
-            : SSL decryption
-            : Logs, dashboards, and reports
+            : SSL decryption objectives
+            : Logs, ACC, dashboards, reports
 ```
 
 ## Target Architecture
@@ -91,77 +100,84 @@ flowchart LR
     NGFW --> Reports
 ```
 
+> [!IMPORTANT]
+> Configuration screenshots are included only where evidence exists. Where screenshots are missing, the repository uses objective-supported language such as documented, demonstrated, and validated in a controlled lab.
+
+---
+
 ## Implementation Phases
 
 ### Phase 1: Establish a Governed Firewall Baseline
 
-The project starts with configuration management and administrative access control. The supporting lab objectives include baseline loading, named snapshots, export/revert workflows, configuration previews, System and Configuration log review, local administrator accounts, LDAP, RADIUS, authentication profiles, and authentication sequencing.
+The case study begins with operational control of the firewall: baseline loading, named configuration snapshots, export and revert workflows, configuration previews, and System/Configuration log review. Administrator access objectives include local administrators, LDAP, RADIUS, authentication profiles, and authentication sequencing.
 
 Evidence basis: Lab 02 and Lab 03 objectives, plus available authentication-related evidence.
 
 ### Phase 2: Build the Network Security Foundation
 
-The firewall design uses routed interfaces, security zones, a virtual router, and interface management profiles. The purpose is to separate traffic by trust boundary and limit management exposure.
+The firewall model uses routed interfaces, security zones, a virtual router, and interface management profiles to separate traffic by trust boundary and reduce unnecessary management exposure.
 
 Evidence basis: Lab 04 objectives and available segmentation evidence.
 
 <figure>
   <img src="screenshots/palo-alto/security-policy/security-zones-validation.png" alt="Security zone validation evidence">
-  <figcaption>Figure 1: Available evidence supporting zone-based segmentation and firewall validation.</figcaption>
+  <figcaption><strong>Figure 1:</strong> Segmentation evidence demonstrating zone-based firewall validation. This supports the core security concept that traffic should be evaluated at trust boundaries instead of treated as one flat network.</figcaption>
 </figure>
 
 ### Phase 3: Enforce Traffic Flow with Policy and NAT
 
-Security policy and NAT are treated as the control layer for business traffic. The implementation scope includes user-to-extranet access, internet-bound policy, policy hit-count review, logging, source NAT, and destination NAT.
+Security Policy and NAT form the traffic-control layer. The documented scope includes user-to-extranet access, internet-bound rules, policy hit-count review, logging, source NAT, and destination NAT.
 
-Evidence basis: Lab 05 and Lab 06 objectives, plus available traffic and NAT validation evidence.
+Evidence basis: Lab 05 and Lab 06 objectives, plus available policy and NAT validation screenshots.
 
 <figure>
   <img src="screenshots/palo-alto/security-policy/security-policy-traffic-validation.png" alt="Security policy traffic validation evidence">
-  <figcaption>Figure 2: Available evidence supporting security policy traffic validation.</figcaption>
+  <figcaption><strong>Figure 2:</strong> Traffic validation evidence for Security Policy behavior. This matters because firewall rules should be verified through observed traffic, not only assumed from configuration intent.</figcaption>
 </figure>
 
 <figure>
   <img src="screenshots/palo-alto/nat/nat-traffic-validation.png" alt="NAT traffic validation evidence">
-  <figcaption>Figure 3: Available evidence supporting NAT validation.</figcaption>
+  <figcaption><strong>Figure 3:</strong> NAT validation evidence demonstrating translated traffic behavior. This supports the perimeter security concept of controlling how internal and published services are represented across trust boundaries.</figcaption>
 </figure>
 
 ### Phase 4: Add Layered Inspection and Application Control
 
-The inspection layer adds App-ID, Security Profiles, URL Filtering, and WildFire. This moves the design beyond basic allow/deny rules by validating application behavior, web categories, known-threat controls, and unknown-file analysis.
+The inspection layer adds App-ID, Security Profiles, URL Filtering, and WildFire. This moves the firewall model beyond basic port filtering into application-aware and content-aware enforcement.
 
 Evidence basis: Lab 07, Lab 08, Lab 09, and Lab 10 objectives, plus available threat-prevention, URL filtering, and WildFire evidence.
 
 <figure>
   <img src="screenshots/palo-alto/threat-prevention/threat-prevention-log.png" alt="Threat prevention evidence">
-  <figcaption>Figure 4: Available evidence supporting threat-prevention validation.</figcaption>
+  <figcaption><strong>Figure 4:</strong> Threat-prevention evidence showing validation of inspection controls. This demonstrates the principle that allowed traffic still needs security inspection for malware, spyware, and vulnerability activity.</figcaption>
 </figure>
 
 <figure>
   <img src="screenshots/palo-alto/url-filtering/url-filtering-block-log.png" alt="URL filtering evidence">
-  <figcaption>Figure 5: Available evidence supporting URL filtering validation.</figcaption>
+  <figcaption><strong>Figure 5:</strong> URL filtering evidence supporting category-based web control. This validates web security enforcement beyond IP and port rules by evaluating the destination category and policy action.</figcaption>
 </figure>
 
 <figure>
   <img src="screenshots/palo-alto/wildfire/wildfire-analysis-evidence.png" alt="WildFire evidence">
-  <figcaption>Figure 6: Available evidence supporting WildFire analysis validation.</figcaption>
+  <figcaption><strong>Figure 6:</strong> WildFire evidence supporting unknown-file analysis workflow. This demonstrates how the firewall can extend inspection to files that require malware verdict analysis instead of relying only on static rule decisions.</figcaption>
 </figure>
 
 ### Phase 5: Operationalize Identity, Decryption, and Reporting
 
-The final phase adds User-ID, SSL decryption planning, and operational reporting. User-ID supports group-aware access decisions for acquisition users and marketing access requirements. SSL decryption objectives cover trusted/untrusted certificates, browser trust, outbound decryption policy, log review, and no-decrypt exceptions for sensitive categories. Reporting objectives include Dashboard, ACC, Traffic logs, Threat logs, App Scope, predefined reports, and custom reports.
+The final phase demonstrates identity-aware access, SSL decryption objectives, and operational visibility. User-ID supports group-aware policy decisions. SSL decryption objectives include certificate handling, outbound decryption policy, log review, and no-decrypt exceptions for sensitive categories. Reporting objectives include Dashboard, ACC, Traffic logs, Threat logs, App Scope, predefined reports, and custom reports.
 
-Evidence basis: Lab 11, Lab 12, and Lab 13 objectives, plus available group and reporting evidence. Direct decryption configuration screenshots are not present, so decryption is documented as objective-supported rather than screenshot-proven.
+Evidence basis: Lab 11, Lab 12, and Lab 13 objectives, plus available group and reporting evidence. Direct decryption configuration screenshots are not present, so SSL decryption is documented as objective-supported rather than screenshot-proven.
 
 <figure>
   <img src="screenshots/palo-alto/authentication/user-id-group-evidence.png" alt="User-ID group evidence">
-  <figcaption>Figure 7: Available evidence supporting group-based access-control concepts.</figcaption>
+  <figcaption><strong>Figure 7:</strong> Group evidence supporting identity-aware policy design. This matters because enterprise firewall access should often be based on user and group context, not only source IP address.</figcaption>
 </figure>
 
 <figure>
   <img src="screenshots/palo-alto/reporting/custom-report-apps-used.png" alt="Reporting evidence">
-  <figcaption>Figure 8: Available evidence supporting reporting and application visibility.</figcaption>
+  <figcaption><strong>Figure 8:</strong> Reporting evidence supporting application visibility and operational review. This validates the security operations requirement to turn firewall activity into reviewable dashboards, reports, and investigation data.</figcaption>
 </figure>
+
+---
 
 ## Evidence Gallery
 
@@ -177,7 +193,8 @@ Evidence basis: Lab 11, Lab 12, and Lab 13 objectives, plus available group and 
 | WildFire | `screenshots/palo-alto/wildfire/wildfire-analysis-evidence.png` | WildFire analysis evidence |
 | Reporting | `screenshots/palo-alto/reporting/custom-report-apps-used.png` | Reporting and application visibility evidence |
 
-Completion-only evidence is stored separately in `screenshots/palo-alto/completion-evidence/` and is not used as the main technical proof.
+> [!TIP]
+> Completion-only evidence is stored separately in `screenshots/palo-alto/completion-evidence/` so technical validation screenshots remain distinct from score or completion proof.
 
 ## Technologies and Security Concepts
 
@@ -196,13 +213,13 @@ Completion-only evidence is stored separately in `screenshots/palo-alto/completi
 | Encrypted traffic | SSL Forward Proxy objectives and no-decrypt privacy exceptions |
 | Operations | Dashboard, ACC, App Scope, predefined reports, custom reports |
 
-## Outcomes
+## Engineering Outcomes
 
-- Converted isolated firewall artifacts into a cohesive enterprise deployment case study.
-- Organized evidence by security function instead of by assignment or lab number.
-- Separated completion screenshots from technical validation screenshots.
-- Documented security controls with honest evidence boundaries.
-- Produced recruiter-friendly documentation, resume bullets, LinkedIn content, and interview preparation.
+- Demonstrated a phase-based NGFW deployment model from baseline administration through monitoring and reporting.
+- Validated segmentation, policy, NAT, threat-prevention, URL filtering, WildFire, identity, and reporting concepts using available evidence.
+- Organized firewall screenshots by security capability so reviewers can quickly understand the control objective behind each artifact.
+- Separated completion evidence from technical validation evidence to keep the portfolio credible and easy to audit.
+- Documented evidence gaps clearly, turning missing screenshots into a practical capture list instead of overstating the project.
 
 ## Skills Demonstrated
 
@@ -219,13 +236,13 @@ Completion-only evidence is stored separately in `screenshots/palo-alto/completi
 
 ## Resume Bullets
 
-- Designed and documented a Palo Alto NGFW enterprise security case study covering segmentation, Security Policy, NAT, App-ID, URL Filtering, WildFire, User-ID, SSL decryption objectives, and reporting.
-- Organized sanitized firewall evidence into a recruiter-ready portfolio with architecture diagrams, deployment phases, validation screenshots, measurable scope, and evidence boundaries.
-- Validated firewall control objectives using available traffic, NAT, threat-prevention, URL filtering, WildFire, authentication, User-ID, and reporting evidence from a controlled lab environment.
+- Documented a Palo Alto NGFW enterprise firewall case study covering security zones, routed interfaces, Security Policy, NAT, App-ID, URL Filtering, WildFire, User-ID, SSL decryption objectives, and operational reporting.
+- Validated firewall security controls in a controlled lab using available evidence from traffic validation, NAT behavior, threat-prevention logs, URL filtering, WildFire analysis, identity/group context, and reporting workflows.
+- Built a recruiter-ready cybersecurity portfolio repository with architecture diagrams, deployment phases, evidence mapping, security outcomes, and clearly documented evidence boundaries.
 
 ## Evidence Gaps to Capture Next
 
-The current repository is grounded in available screenshots and lab objectives. To strengthen the case study further, capture these manually if you still have lab access:
+The current repository is grounded in available screenshots and lab objectives. To strengthen the case study further, capture these manually if lab access is available:
 
 - Security Policy rulebase screenshot.
 - NAT Policy rulebase screenshot.
@@ -237,6 +254,10 @@ The current repository is grounded in available screenshots and lab objectives. 
 - No-decrypt rule for sensitive categories.
 - ACC dashboard and App Scope report views.
 
-## Disclaimer
+## Lab Reference Boundary
 
-This project was completed in a controlled lab environment using sanitized evidence. It is presented as a cybersecurity portfolio case study, not as a production customer deployment. Copyrighted lab PDFs are not republished; [lab-guides/README.md](lab-guides/README.md) lists the lab topics that informed the project.
+The implementation narrative is informed by controlled PAN-OS lab objectives for configuration management, administrator authentication, security zones, Security Policy, NAT, App-ID, Security Profiles, URL Filtering, WildFire, User-ID, SSL Decryption, and Logs/Reports. Copyrighted lab PDFs are not republished; see [lab-guides/README.md](lab-guides/README.md) for the topic list.
+
+## Professional Disclaimer
+
+This repository is a cybersecurity portfolio case study completed in a controlled lab environment with sanitized evidence. It demonstrates firewall engineering concepts and validation workflows, but it should not be interpreted as a production customer deployment or as containing live enterprise configuration data.
